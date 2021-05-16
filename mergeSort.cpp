@@ -1,4 +1,4 @@
-void merge(int arr[],int l,int mid ,int r){
+void merge(int arr[],int l,int mid ,int r){ // same as merging 2 arrays sorted
   int n1= mid-l+1;
   int n2 = r-mid;
   int a[n1],b[n2];
@@ -17,7 +17,7 @@ void merge(int arr[],int l,int mid ,int r){
       j++;
     }
   }
-  while(i<n1){
+  while(i<n1){ // now checking if any array is left to be done 
     arr[k]=a[i];
     i++;k++;
   }
@@ -35,3 +35,5 @@ void mergeSort(int arr[],int l ,int r){
     merge(arr,l,mid,r);
   }
 }
+
+// Basic logic of mergesort is splitting array into halves and doing halves till single element in a half and merging them after that
