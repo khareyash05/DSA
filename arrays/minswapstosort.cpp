@@ -34,5 +34,5 @@ int main()
     int n = a.size();
     
     // Output will be 5
-    cout << minSwaps(a, n);
+    cout << min_swap(a, n);
 }
