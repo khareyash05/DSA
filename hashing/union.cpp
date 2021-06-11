@@ -2,7 +2,7 @@
 using namespace std;
 int union1(int a[],int b[]){
   unordered_set<int>set;
-  for(int x:a[])
+  for(int x:a)
     set.insert(x);
   for(int x:b)  
     set.insert(x);
