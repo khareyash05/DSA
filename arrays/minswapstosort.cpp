@@ -17,6 +17,7 @@ int min_swap(vector<int>arr,int N){
   int ans=0;
   vector<int>temp;
   temp=arr;
+  sort(temp.begin(),temp.end());
   for(int i=0;i<N;i++){
     if(arr[i]!=temp[i]){//element out of position in array
       ans++;
