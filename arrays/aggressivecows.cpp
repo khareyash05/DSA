@@ -22,12 +22,12 @@ bool check(int x, int k, vector<int> &stalls)
         {
             cowsPlaced = cowsPlaced + 1;
 
-            if (cowsPlaced == k)
+            if (cowsPlaced == k) // no of cows placed equal to no. of cows
             {
                 return true;
             }
 
-            //    Assign current position of stall as the lastPos.
+            //    Assign current position of stall as the lastPos. as uske aage se place karna hai
             lastPos = stalls[i];
         }
     }
