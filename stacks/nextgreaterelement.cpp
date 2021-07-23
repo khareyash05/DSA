@@ -1,18 +1,10 @@
-// A Stack based C++ program to find next
-// greater element for all array elements.
+
 #include <bits/stdc++.h>
 using namespace std;
- 
-/* prints element and NGE pair for all
-elements of arr[] of size n */
 void printNGE(int arr[], int n)
 {
     stack<int> s;
- 
-    /* push the first element to stack */
     s.push(arr[0]);
- 
-    // iterate for rest of the elements
     for (int i = 1; i < n; i++)
     {
  
@@ -49,8 +41,6 @@ void printNGE(int arr[], int n)
         s.pop();
     }
 }
- 
-/* Driver code */
 int main()
 {
     int arr[] = { 11, 13, 21, 3 };
