@@ -12,4 +12,4 @@ int main(){
   cin >> n>> m;
   int ans = count(n,m);
   cout << ans;
-}ys 
+}
