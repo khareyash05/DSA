@@ -1,36 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
-// Function to return the maximum
-// water that can be stored
-int maxWater(int arr[], int n)
-{
-     
-    // To store the maximum water
-    // that can be stored
-    int res = 0;
-     
-    // For every element of the array
-    for (int i = 1; i < n-1; i++) {
-         
-        // Find the maximum element on its left
-        int left = arr[i];
-        for (int j=0; j<i; j++)
-           left = max(left, arr[j]);
-         
-        // Find the maximum element on its right  
-        int right = arr[i];
-        for (int j=i+1; j<n; j++)
-           right = max(right, arr[j]);
-        
-       // Update the maximum water   
-       res = res + (min(left, right) - arr[i]);  
+int maxWater(int arr[], int n){
+    int left[n], right[n];
+    left[0] = arr[0];
+    right[n-1] = arr[n-1];
+    for(int i=0; i<n; i++){
+        left[i] = max(left[i-1], arr[i]);
+        right[n-i-1] = max(right[n-i], arr[n-i-1]);
     }
- 
-    return res;
+    int res = 0;
+    for(int i=0; i<n; i++){
+        res = max(res, min(left[i], right[i])-arr[i]);
+    }
 }
- 
-// Driver code
 int main()
 {
     int arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
