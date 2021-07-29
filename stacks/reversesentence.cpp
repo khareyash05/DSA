@@ -14,10 +14,10 @@ void reverseSentence(string s){
       cout << s1.top();
       s1.pop();
     }
-    cout << "\n";
   }
 }
 int main(){
   string s = "Hey, how are you?";
+  cout << s << endl;
   reverseSentence(s);
 }
