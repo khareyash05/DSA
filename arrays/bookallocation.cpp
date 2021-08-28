@@ -21,9 +21,9 @@ int minPages(int arr[],int k,int n){
     int mid = (mini+maxi)/2;
     if(checkFeasible(arr,k,mid)){
       res=mid;
-      mini=mid+1;
+      maxi=mid-1;
     }
-    else maxi=mid+1;
+    else mini=mid+1;
   }
   return res;
 }
