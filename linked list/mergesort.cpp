@@ -9,7 +9,16 @@ Node* midNode(Node*head,Node*tail){
 }  
 
 Node* merge(Node* x ,Node* y){
-    // merge 2 sorted linked lists code
+    Node* c;
+    if(x->data<y->data){
+        c=x;
+        c->next = merge(x->next,y);
+    }
+    else{
+        c=y;
+        c->next = merge(x,y->next);
+    }
+    return c;
 }
 
 Node* mergeSort(Node* head,Node* tail){
