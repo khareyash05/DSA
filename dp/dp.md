@@ -26,6 +26,37 @@ int knapsack2(int wt[],int val[],int W,int n){
 
 <h4>1. Subset Sum</h4>
 Here only one array <br>
+For initialisation, remember for sum=0 there can be an empty subset <br>
 Code same as knapsack because its about finding if exist or not so max function will not work hence instead we use || 
 
 <h4>2. Count Subsets with given sum</h4>
+In subset sum instead of || use + as we have to count all subsets with given sum
+
+<h4>3. Equal Sum Partition</h4>
+Q - Divide array into 2 parts such that sum of subsets is equal <br>
+i.e. <h5>S1-S2=0 and S1+S2=sum of array</h5>
+```
+if(sum%2==0) return subsetsum(arr,sum/2)
+```
+sum should be even and we need to find only one subset with "sum/2" sum<br>
+Just subset sum problem with sum/2
+
+<h4>4. Minimum SUbset Sum Difference</h4>
+<h5>In this S1-S2 = min</h5>
+SInce S2= Sum of array - S1 so answer is min(Sum-2S1)<br>
+Just like equal sum partition find for sum/2 and then where the answer is true find min of that
+```
+int diff = INT_MAX;
+
+	// Find the largest j such that dp[n][j]
+	// is true where j loops from sum/2 t0 0
+	for (int j = sum / 2; j >= 0; j--) {
+		// Find the
+		if (dp[n][j] == true) {
+			diff = sum - 2 * j;
+			break;
+		}
+	}
+	return diff;
+```
+
