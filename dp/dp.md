@@ -35,9 +35,7 @@ In subset sum instead of || use + as we have to count all subsets with given sum
 <h4>3. Equal Sum Partition</h4>
 Q - Divide array into 2 parts such that sum of subsets is equal <br>
 i.e. <h5>S1-S2=0 and S1+S2=sum of array</h5>
-```
-if(sum%2==0) return subsetsum(arr,sum/2)
-```
+<code>if(sum%2==0) return subsetsum(arr,sum/2)</code>
 sum should be even and we need to find only one subset with "sum/2" sum<br>
 Just subset sum problem with sum/2
 
@@ -46,7 +44,8 @@ Just subset sum problem with sum/2
 SInce S2= Sum of array - S1 so answer is min(Sum-2S1)<br>
 Just like equal sum partition find for sum/2 and then where the answer is true find min of that
 ```
-int diff = INT_MAX;
+
+	int diff = INT_MAX;
 
 	// Find the largest j such that dp[n][j]
 	// is true where j loops from sum/2 t0 0
@@ -57,6 +56,5 @@ int diff = INT_MAX;
 			break;
 		}
 	}
-	return diff;
-```
+	return diff;```
 
