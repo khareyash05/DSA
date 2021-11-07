@@ -1,4 +1,4 @@
-// Shortest Common Supersequence is size of strings - lcs of them as lcs is counted twice and need to remove them
+// Deletion  = n-lcs   Insertion = m-lcs
 #include<bits/stdc++.h>
 using namespace std;
 int lcs(string X,string Y,int n,int m){
@@ -18,13 +18,13 @@ int lcs(string X,string Y,int n,int m){
     }
     return dp[n][m];
 }
-int scss(string X,string Y,int n ,int m){
-    return m+n-lcs(X,Y,n,m);
+int mininsertdelete(string X,string Y,int n,int m){
+    return m+n-2*lcs(X,Y,n,m);
 }
 int main(){
-    string X= "AGGTAB";
-    string Y = "GXTXAYB";
-    int n= 6;
-    int m=7;
-    cout << scss(X,Y,n,m);
+    string X = "geeksforgeeks";
+    string Y = "geeks";
+    int n=13,m=5;
+    cout << mininsertdelete(X,Y,n,m);
+    cout << "\n" << lcs(X,Y,n,m);
 }
