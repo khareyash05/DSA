@@ -7,7 +7,7 @@ int rodcut(int price[],int length[],int W,int n){
     for(int i=0;i<=W;i++) dp[0][i]=0;
     for(int i=1;i<=n;i++){
         for(int j=1;j<=W;j++){
-            if(length[i]<=j)
+            if(length[i-1]<=j)
                 dp[i][j]=max(price[i]+dp[i][j-length[i]],dp[i-1][j]);
             else dp[i][j] = dp[i-1][j];
         }
